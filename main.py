@@ -1,4 +1,5 @@
 import AVL_Tree
+import node
 
 patientsBalancedByID = AVL_Tree()
 patientsBalancedByIDRoot = None
@@ -78,7 +79,7 @@ for i in range(1,7):
 
         for line in inpute:
             value = line.split()
-            
+
             if value[0] == "Add":
                 add(value[1],value[2])
             elif value[0] == "Update":
