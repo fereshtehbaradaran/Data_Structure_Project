@@ -129,3 +129,10 @@ class AVL_Tree(object):
             return 0
  
         return self.getHeight(root.left) - self.getHeight(root.right)
+
+
+    def getMinValueNode(self, root):
+        if root is None or root.left is None:
+            return root
+ 
+        return self.getMinValueNode(root.left)
