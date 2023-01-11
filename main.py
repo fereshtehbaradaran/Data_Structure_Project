@@ -35,3 +35,18 @@ def serveFirst():
     patientsBalancedByHMRoot = patientsBalancedByHM.delete(patientsBalancedByHMRoot, toServe.third)
     patientsBalancedByOrderRoot = patientsBalancedByOrder.delete(patientsBalancedByOrderRoot, toServe.first)
     numberOfPatients -= 1
+
+
+
+def serveSickest():
+    global patientsBalancedByIDRoot
+    global patientsBalancedByHMRoot
+    global patientsBalancedByOrderRoot
+    global numberOfPatients
+    
+    toServe = patientsBalancedByHM.getMinValueNode(patientsBalancedByHMRoot)
+    print(toServe.second,toServe.first)
+    patientsBalancedByIDRoot = patientsBalancedByID.delete(patientsBalancedByIDRoot, toServe.second)
+    patientsBalancedByHMRoot = patientsBalancedByHM.delete(patientsBalancedByHMRoot, toServe.first)
+    patientsBalancedByOrderRoot = patientsBalancedByOrder.delete(patientsBalancedByOrderRoot, toServe.third)
+    numberOfPatients -= 1
