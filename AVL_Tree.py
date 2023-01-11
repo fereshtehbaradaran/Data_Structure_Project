@@ -136,3 +136,14 @@ class AVL_Tree(object):
             return root
  
         return self.getMinValueNode(root.left)
+
+    
+    def searchNode(self, root, propertyValue):
+
+        if root is None or root.first == propertyValue:
+            return root
+
+        if root.first < propertyValue:
+            return self.searchNode(root.right, propertyValue)
+
+        return self.searchNode(root.left, propertyValue)
