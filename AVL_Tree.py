@@ -31,7 +31,9 @@ class AVL_Tree(object):
  
         return root
 
-    
+
+
+
     def delete(self, root, nodeProperty):
 
         if not root:
@@ -85,6 +87,8 @@ class AVL_Tree(object):
         return root
 
 
+
+
     def leftRotate(self, z):
  
         y = z.right
@@ -93,14 +97,14 @@ class AVL_Tree(object):
         y.left = z
         z.right = T2
  
-        z.height = 1 + max(self.getHeight(z.left),
-                         self.getHeight(z.right))
-        y.height = 1 + max(self.getHeight(y.left),
-                         self.getHeight(y.right))
+        z.height = 1 + max(self.getHeight(z.left), self.getHeight(z.right))
+        y.height = 1 + max(self.getHeight(y.left), self.getHeight(y.right))
  
         return y
  
- 
+
+
+
     def rightRotate(self, z):
  
         y = z.left
@@ -109,12 +113,12 @@ class AVL_Tree(object):
         y.right = z
         z.left = T3
  
-        z.height = 1 + max(self.getHeight(z.left),
-                          self.getHeight(z.right))
-        y.height = 1 + max(self.getHeight(y.left),
-                          self.getHeight(y.right))
+        z.height = 1 + max(self.getHeight(z.left), self.getHeight(z.right))
+        y.height = 1 + max(self.getHeight(y.left), self.getHeight(y.right))
  
         return y
+
+
 
     
     def getHeight(self, root):
@@ -122,6 +126,8 @@ class AVL_Tree(object):
             return 0
  
         return root.height
+
+
 
     
     def getBalance(self, root):
@@ -131,13 +137,17 @@ class AVL_Tree(object):
         return self.getHeight(root.left) - self.getHeight(root.right)
 
 
+
+
     def getMinValueNode(self, root):
         if root is None or root.left is None:
             return root
  
         return self.getMinValueNode(root.left)
 
-    
+
+
+
     def searchNode(self, root, propertyValue):
 
         if root is None or root.first == propertyValue:
@@ -147,3 +157,4 @@ class AVL_Tree(object):
             return self.searchNode(root.right, propertyValue)
 
         return self.searchNode(root.left, propertyValue)
+    
