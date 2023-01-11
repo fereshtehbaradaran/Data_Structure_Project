@@ -68,4 +68,24 @@ def update(ID,newHM):
     patientsBalancedByIDRoot = patientsBalancedByID.insert(patientsBalancedByIDRoot,node(ID,newHM,order))
     patientsBalancedByHMRoot = patientsBalancedByHM.insert(patientsBalancedByHMRoot,node(newHM,ID,order))
     patientsBalancedByOrderRoot = patientsBalancedByOrder.insert(patientsBalancedByOrderRoot,node(order, ID, newHM))
-    
+
+
+
+for i in range(1,7):
+    fileName = "inpute"+str(i)+".txt"
+
+    with open(fileName, 'r') as inpute:
+
+        for line in inpute:
+            value = line.split()
+            
+            if value[0] == "Add":
+                add(value[1],value[2])
+            elif value[0] == "Update":
+                update(value[1],value[2])
+            elif value[0] == "Serve" and value[1] == "First":
+                serveFirst()
+            elif value[0] == "Serve" and value[1] == "Sickest":
+                serveSickest()
+            else:
+                print("\nOutput "+str(i)+":")
