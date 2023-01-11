@@ -83,7 +83,7 @@ class AVL_Tree(object):
             return self.leftRotate(root)
 
         return root
-        
+
 
     def leftRotate(self, z):
  
@@ -115,3 +115,10 @@ class AVL_Tree(object):
                           self.getHeight(y.right))
  
         return y
+
+    
+    def getHeight(self, root):
+        if not root:
+            return 0
+ 
+        return root.height
