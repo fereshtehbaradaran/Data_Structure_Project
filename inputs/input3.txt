@@ -1,0 +1,7 @@
+Input 1:
+Add 8 3
+Add 5 -12
+Add 9 6
+Serve First
+Serve First
+Serve First

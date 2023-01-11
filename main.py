@@ -72,8 +72,8 @@ def update(ID,newHM):
 
 
 
-for i in range(1,7):
-    fileName = "inpute"+str(i)+".txt"
+for i in range(1,9):
+    fileName = "inputs/input"+str(i)+".txt"
 
     with open(fileName, 'r') as inpute:
 

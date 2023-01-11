@@ -1,0 +1,10 @@
+Input 4:
+Add 2 3
+Add 5 -12
+Add 9 6
+Update 9 5
+Update 5 7 
+Update 2 1
+Serve Sickest
+Serve Sickest
+Serve Sickest

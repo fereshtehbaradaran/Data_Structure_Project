@@ -1,0 +1,7 @@
+Input 6:
+Add 12345678 5
+Add 87654321 3
+Update 87654321 6
+Update 12345678 4
+Serve First
+Serve First

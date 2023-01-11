@@ -1,0 +1,9 @@
+Input 5:
+Add 2 3
+Add 5 -12
+Add 9 6
+Add 6 -2
+Serve Sickest
+Serve First
+Serve Sickest
+Serve First
