@@ -122,3 +122,10 @@ class AVL_Tree(object):
             return 0
  
         return root.height
+
+    
+    def getBalance(self, root):
+        if not root:
+            return 0
+ 
+        return self.getHeight(root.left) - self.getHeight(root.right)
