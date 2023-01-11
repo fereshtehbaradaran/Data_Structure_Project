@@ -50,3 +50,22 @@ def serveSickest():
     patientsBalancedByHMRoot = patientsBalancedByHM.delete(patientsBalancedByHMRoot, toServe.first)
     patientsBalancedByOrderRoot = patientsBalancedByOrder.delete(patientsBalancedByOrderRoot, toServe.third)
     numberOfPatients -= 1
+
+
+
+def update(ID,newHM):
+    global patientsBalancedByIDRoot
+    global patientsBalancedByHMRoot
+    global patientsBalancedByOrderRoot
+    global numberOfPatients
+    
+    toUpdate = patientsBalancedByID.searchNode(patientsBalancedByIDRoot,ID)
+    HM = toUpdate.second
+    order = toUpdate.third
+    patientsBalancedByIDRoot = patientsBalancedByID.delete(patientsBalancedByIDRoot, ID)
+    patientsBalancedByHMRoot = patientsBalancedByHM.delete(patientsBalancedByHMRoot, HM)
+    patientsBalancedByOrderRoot = patientsBalancedByOrder.delete(patientsBalancedByOrderRoot, order)
+    patientsBalancedByIDRoot = patientsBalancedByID.insert(patientsBalancedByIDRoot,node(ID,newHM,order))
+    patientsBalancedByHMRoot = patientsBalancedByHM.insert(patientsBalancedByHMRoot,node(newHM,ID,order))
+    patientsBalancedByOrderRoot = patientsBalancedByOrder.insert(patientsBalancedByOrderRoot,node(order, ID, newHM))
+    
