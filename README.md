@@ -11,3 +11,39 @@ The running time of each operation is either O(log(n)) in the worst case, or O(1
 The input is a list of queries, with one query per line. Whenever a patient is served (either through Serve First or Serve Sickest), write the patient’s ID followed by a space and the patient's health measure at the serving time, and move to the next line.
 
 The queries are set such that the number of patients in the data structure is always less than or equal to 10^6. However, the total number of patients that are inserted to the data structure and served is not limited.
+
+
+### Sample Input 1
+```
+Add 10 7
+Add 4 -3
+Serve First
+Serve First
+```
+
+### Sample Output 1
+```
+10 7
+4 -3
+```
+
+### Sample Input 2
+```
+Add 10 7
+Add 4 -3
+Add 7 13
+Add 5 4
+Update 7 -8
+Serve Sickest
+Serve Sickest
+Serve First
+Serve First
+```
+
+### Sample Output 2
+```
+7 -8
+4 -3
+10 7
+5 4
+```
