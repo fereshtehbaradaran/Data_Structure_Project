@@ -20,3 +20,18 @@ def add(ID,HM):
     patientsBalancedByHMRoot = patientsBalancedByHM.insert(patientsBalancedByHMRoot,node(HM,ID,numberOfPatients))
     patientsBalancedByOrderRoot = patientsBalancedByOrder.insert(patientsBalancedByOrderRoot,node(numberOfPatients, ID, HM))
     numberOfPatients += 1
+
+
+
+def serveFirst():
+    global patientsBalancedByIDRoot
+    global patientsBalancedByHMRoot
+    global patientsBalancedByOrderRoot
+    global numberOfPatients
+    
+    toServe = patientsBalancedByOrder.getMinValueNode(patientsBalancedByOrderRoot)
+    print(toServe.second,toServe.third)
+    patientsBalancedByIDRoot = patientsBalancedByID.delete(patientsBalancedByIDRoot, toServe.second)
+    patientsBalancedByHMRoot = patientsBalancedByHM.delete(patientsBalancedByHMRoot, toServe.third)
+    patientsBalancedByOrderRoot = patientsBalancedByOrder.delete(patientsBalancedByOrderRoot, toServe.first)
+    numberOfPatients -= 1
